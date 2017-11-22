@@ -22,7 +22,7 @@ curl -v https://api.robinhood.com/accounts/{account.number}/positions/
 
 **Response**
 
-Fields are returned as well as the following:
+A [paginated](README.md#pagination) list of positions is returned. Positions contain the following keys.
 
 | Key          		           | Type     | Description |
 |------------------------------|----------|-------------|
@@ -43,17 +43,37 @@ Fields are returned as well as the following:
 
 ```
 {
-    "extended_hours_equity":null,
-    "url":"https://api.robinhood.com/portfolios/8UD09348/",
-    "adjusted_equity_previous_close":"500.1700",
-    "account":"https://api.robinhood.com/accounts/8UD09348/",
-    "last_core_market_value":"34.0700",
-    "last_core_equity":"499.6600",
-    "excess_margin":null,
-    "excess_margin_with_uncleared_deposits":null,
-    "equity":"499.6600",
-    "market_value":"34.0700",
-    "equity_previous_close":"0.1700",
-    "extended_hours_market_value":null
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "account": "https://api.robinhood.com/accounts/8UD09348/",
+            "average_buy_price": "0.0000",
+            "created_at": "2017-11-08T21:18:25.303412Z",
+            "instrument": "https://api.robinhood.com/instruments/479de8c0-22fe-4fcb-ba9f-65b55ab09d16/",
+            "intraday_average_buy_price": "0.0000",
+            "intraday_quantity": "0.0000",
+            "quantity": "1.0000",
+            "shares_held_for_buys": "0.0000",
+            "shares_held_for_sells": "0.0000",
+            "shares_held_for_stock_grants": "0.0000",
+            "updated_at": "2017-11-10T12:53:07.060717Z",
+            "url": "https://api.robinhood.com/accounts/8UD09348/positions/479de8c0-22fe-4fcb-ba9f-65b55ab09d16/"
+        },
+        {
+            "account": "https://api.robinhood.com/accounts/8UD09348/",
+            "average_buy_price": "0.0000",
+            "created_at": "2017-08-14T02:11:42.625008Z",
+            "instrument": "https://api.robinhood.com/instruments/1e513292-5926-4dc4-8c3d-4af6b5836704/",
+            "intraday_average_buy_price": "0.0000",
+            "intraday_quantity": "0.0000",
+            "quantity": "0.0000",
+            "shares_held_for_buys": "0.0000",
+            "shares_held_for_sells": "0.0000",
+            "shares_held_for_stock_grants": "0.0000",
+            "updated_at": "2017-08-14T03:46:31.335343Z",
+            "url": "https://api.robinhood.com/accounts/8UD09348/positions/1e513292-5926-4dc4-8c3d-4af6b5836704/"
+        }
+    ]
 }
 ```
